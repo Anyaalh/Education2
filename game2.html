@@ -48,7 +48,7 @@
 var word = pickWord();
 function setupAnswerArray (word){
    var array = [];
-for (var i = 0; i < word.length; i++)
+for (let i = 0; i < word.length; i++)
  {
   array[i] = "_";
 }
@@ -75,7 +75,7 @@ var guess = getGuess();
  } else {
 function updateGameState (guess, word, answerArray){
    var letters = 0;
-for (var j = 0; j < word.length; j++) {
+for (let j = 0; j < word.length; j++) {
  if (word[j] === guess && answerArray[j] === ("_")) {
  answerArray[j] = guess;
  letters++;
@@ -84,8 +84,7 @@ for (var j = 0; j < word.length; j++) {
  return letters;
 }
 }
- var correctGuesses = updateGameState(guess, word, 
-answerArray);
+ var correctGuesses = updateGameState(guess, word, answerArray);
  remainingLetters -= correctGuesses;
 }
 function showAnswerAndCongratulatePlayer (answerArray){
